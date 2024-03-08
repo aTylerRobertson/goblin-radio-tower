@@ -1,0 +1,19 @@
+{
+  "name": "warcraft-radio",
+  "version": "1.0.0",
+  "description": "Streaming radio of Warcraft 2 barks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Don't you have a kingdom to run?\" && exit 1"
+  },
+  "author": "Tyler Robertson",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "music-metadata": "^7.14.0",
+    "stream": "^0.0.2",
+    "throttle": "^1.0.3"
+  }
+}
