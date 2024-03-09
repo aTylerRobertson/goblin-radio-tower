@@ -35,6 +35,7 @@ app.set("views", "./views");
 
 // Prepare the tracklist
 const trackFolder = "./static/tracks";
+fs.mkdirSync(trackFolder, { recursive: true });
 let tracks = [];
 const refreshTracks = () => {
   tracks = fs
