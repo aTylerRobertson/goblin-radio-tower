@@ -4,6 +4,8 @@ Run your own internet radio station, similar to [Icecast](https://icecast.org). 
 
 ## usage
 
+> Try this project out super quick with [Glitch](https://glitch.new/~goblin-radio-tower)!
+
 1. Copy `.env.example` to `.env` and fill out all the values
 2. Run `npm start` in your terminal to fire up the server
 3. Use the `Admin` link in the navigation to log in with your username and password that you set in step 1
