@@ -1,0 +1,37 @@
+<section>
+    <h2>Live Audio</h2>
+  <audio controls autoplay>
+    <source src={{streamURL}} type={{contentType}} />
+  </audio>
+</section>
+<section>
+    <h2>Upload new track</h2>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required />
+    <input type="hidden" name="auth" value={{auth}} />
+    <input type="submit" value="upload" />
+  </form>
+</section>
+{{#if tracks}}
+    <section>
+        <h2>All tracks</h2>
+        <table id="tracklist">
+            <tr>
+                <th>Track name</th>
+                <th>Delete track</th>
+            </tr>
+            {{#each tracks}}
+            <tr>
+                <td>{{this}}</td>
+                <td>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="filename" value={{this}} />
+                        <input type="hidden" name="auth" value={{../auth}} />
+                        <input type="submit" value="❌" alt="Delete track" />
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+{{/if}}

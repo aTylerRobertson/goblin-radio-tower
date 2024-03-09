@@ -1,0 +1,142 @@
+:root {
+  --main: #030501;
+  --alt: #84817a;
+  --link: #227093;
+  --link-hover: #34ace0;
+  --background: #fefefe;
+  --fonts: "Tahoma", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonts);
+  font-size: 120%;
+  background-color: var(--background);
+  color: var(--main);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--alt);
+}
+
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+nav {
+  background-color: var(--alt);
+  color: var(--background);
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  padding: 0 10px;
+  display: inline;
+  float: left;
+}
+
+nav a,
+nav a:hover {
+  color: var(--background);
+}
+
+main {
+  width: 600px;
+  max-width: 90vw;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+form {
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 3px solid var(--alt);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  border: 3px solid var(--alt);
+  padding: 1px 5px;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+input[type="submit"] {
+  font-size: inherit;
+  font-family: inherit;
+  background-color: var(--alt);
+  color: var(--background);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+
+tr {
+  border: none;
+  min-height: 1rem;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  border: none;
+  text-align: center;
+  padding: 3px;
+}
+
+td form,
+td form input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+audio {
+  width: 100%;
+  background-color: var(--alt);
+}

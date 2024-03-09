@@ -1,9 +1,11 @@
-# 2 warcraft 2 radio
+# goblin radio tower
 
-This is a super simple app using [Express](https://expressjs.com) to power a streaming "radio" station, similar to [Icecast](https://icecast.org).
+Run your own internet radio station, similar to [Icecast](https://icecast.org). It was originally used to make [2 Warcraft 2 Radio](https://2-warcraft-2-radio.glitch.me).
 
 ## usage
 
-Upload your tracks into the `static/tracks` folder (thanks to [Thanatos](http://www.thanatosrealms.com/war2/alliance-sounds) for the Warcraft 2 sounds) and start the app (`npm start` if you're in Termal or similar). If you're running locally, that'll start up a server at `localhost:3000` where you'll hear the tracks shuffled continuously (and so will anyone else who has the app open!).
-
-Note that for right now, only MP3s are supported. This is probably something I'll fix if this becomes more than a joke.
+1. Copy `.env.example` to `.env` and fill out all the values
+2. Run `npm start` in your terminal to fire up the server
+3. Use the `Admin` link in the navigation to log in with your username and password that you set in step 1
+4. Use the options on the Admin page to upload or delete files (they're stored in the `static/tracks/` folder if you wanna do this manually)
+5. Share the `/stream` URL (shown on the index page) with your friends!
