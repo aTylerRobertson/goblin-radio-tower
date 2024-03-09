@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Run your own internet radio station",
   "main": "server.js",
+  "engines": {
+    "node": ">14"
+  },
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Don't you have a kingdom to run?\" && exit 1"
