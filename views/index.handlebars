@@ -1,9 +1,14 @@
 <section>
   <audio controls autoplay>
-    <source src={{streamURL}} type={{contentType}} />
+    <source src="{{baseURL}}/stream" type={{contentType}} />
   </audio>
+  <ul id="trackDetails">
+
+  </ul>
   <p>
-    source:
-    <a href={{streamURL}}>{{streamURL}}</a>
+    Streaming at:
+    <a href="{{baseURL}}/stream">{{streamURL}}/stream</a>
   </p>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/socket.js"></script>
 </section>

@@ -138,5 +138,7 @@ td form input[type="submit"] {
 
 audio {
   width: 100%;
+  min-height: 30px;
+  margin: 20px 0;
   background-color: var(--alt);
 }

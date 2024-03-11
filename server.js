@@ -33,6 +33,10 @@ app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
+// Set up Socket.io and http for websocket support
+var server = require("http").createServer(app);
+var io = require("socket.io")(server);
+
 // Prepare the tracklist
 const trackFolder = "./static/tracks";
 fs.mkdirSync(trackFolder, { recursive: true });
@@ -73,7 +77,7 @@ const upload = multer({
 app.get("/", (req, res) => {
   res.render("index", {
     title: process.env.STATION_NAME,
-    streamURL: `${process.env.ROOT_URL}/stream`,
+    baseURL: `${process.env.ROOT_URL}`,
     contentType: process.env.CONTENT_TYPE,
   });
 });
@@ -162,6 +166,11 @@ const play = async (track) => {
   const fileData = await mm.parseFile(filePath);
   const bitRate = fileData.format.bitrate / 8;
 
+  io.emit("newTrack", {
+    fileName: tracks[track],
+    track: fileData,
+  });
+
   // Throttle the stream to the file's bitrate (so it plays smoothly)
   const throttleTransformable = new Throttle(bitRate);
   songReadable.pipe(throttleTransformable);
@@ -202,7 +211,7 @@ const createListener = () => {
 };
 
 // Start the server!
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Listening on ${port}, m'lord!`);
   play(currentTrack);
 });
