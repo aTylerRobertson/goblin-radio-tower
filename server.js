@@ -183,7 +183,7 @@ const play = async (track) => {
 
   // Catch any errors with the file
   throttleTransformable.on("error", (e) => {
-    console.log(err);
+    console.log(e);
     nextTrack();
     play(currentTrack);
   });
